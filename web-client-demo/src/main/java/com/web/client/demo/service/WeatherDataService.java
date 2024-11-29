@@ -1,14 +1,14 @@
-package com.weather.api.service;
+package com.web.client.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.weather.api.client.WeatherApiWebClient;
-import com.weather.api.model.ApiRequest;
-import com.weather.api.model.ResponseObjectData;
-import com.weather.api.model.WeatherApiRes;
-import com.weather.api.model.WeatherDataRes;
-import com.weather.api.modeler.WeatherApiResponseModeler;
+import com.web.client.demo.client.WeatherApiWebClient;
+import com.web.client.demo.model.ApiRequest;
+import com.web.client.demo.model.ResponseObjectData;
+import com.web.client.demo.model.WeatherApiRes;
+import com.web.client.demo.model.WeatherDataRes;
+import com.web.client.demo.modeler.WeatherApiResponseModeler;
 
 @Service
 public class WeatherDataService {

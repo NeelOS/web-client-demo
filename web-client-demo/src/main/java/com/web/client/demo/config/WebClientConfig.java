@@ -1,9 +1,14 @@
-package com.weather.api.config;
+package com.web.client.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
+
+
+/**
+ * This webclient is a basic web client to get weather details with out major authorization
+ */
 @Configuration
 public class WebClientConfig {
 

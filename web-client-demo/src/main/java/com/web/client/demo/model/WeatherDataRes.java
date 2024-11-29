@@ -1,4 +1,4 @@
-package com.weather.api.model;
+package com.web.client.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,4 +22,5 @@ public class WeatherDataRes {
 	private String weatherCondition;
 	private Double windSpeed;
 	private String windDirection;
+	private AQIDataRes AQIParameters;
 }

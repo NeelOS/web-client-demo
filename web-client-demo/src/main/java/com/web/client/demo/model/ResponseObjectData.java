@@ -1,4 +1,4 @@
-package com.weather.api.model;
+package com.web.client.demo.model;
 
 import lombok.Getter;
 import lombok.Setter;

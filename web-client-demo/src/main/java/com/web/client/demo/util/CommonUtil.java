@@ -1,4 +1,4 @@
-package com.weather.api.util;
+package com.web.client.demo.util;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -8,8 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.weather.api.constant.ApiStatus;
-import com.weather.api.model.ResponseObjectData;
+import com.web.client.demo.constant.ApiStatus;
+import com.web.client.demo.model.ResponseObjectData;
 
 import lombok.extern.slf4j.Slf4j;
 

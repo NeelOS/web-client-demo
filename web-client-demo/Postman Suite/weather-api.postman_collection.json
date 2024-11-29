@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "50f8886b-56b3-434d-91ee-4799383f85e5",
+		"name": "weather-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7646638"
+	},
+	"item": [
+		{
+			"name": "weather-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherapi.com/v1/current.json?key=5cffde506bee41718cf133608242911&q=Kolkata&aqi=yes",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "5cffde506bee41718cf133608242911"
+						},
+						{
+							"key": "q",
+							"value": "Kolkata"
+						},
+						{
+							"key": "aqi",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,4 +1,4 @@
-package com.weather.api.constant;
+package com.web.client.demo.constant;
 
 public enum ApiStatus {
 	

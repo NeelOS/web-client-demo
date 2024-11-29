@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "52db1dda-eff5-4b70-87c2-e136b42cc478",
+		"name": "web-client-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7646638"
+	},
+	"item": [
+		{
+			"name": "getWeatherData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"Delhi\",\r\n    \"aqiRequired\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/web-client-demo/getWeatherData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"web-client-demo",
+						"getWeatherData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

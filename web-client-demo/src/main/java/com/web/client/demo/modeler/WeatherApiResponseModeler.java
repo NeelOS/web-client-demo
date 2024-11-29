@@ -1,11 +1,13 @@
-package com.weather.api.modeler;
+package com.web.client.demo.modeler;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.weather.api.model.WeatherApiRes;
-import com.weather.api.model.WeatherDataRes;
-import com.weather.api.util.CommonUtil;
+import com.web.client.demo.model.AQIDataRes;
+import com.web.client.demo.model.WeatherApiRes;
+import com.web.client.demo.model.WeatherDataRes;
+import com.web.client.demo.util.CommonUtil;
 
 @Component
 public class WeatherApiResponseModeler {
@@ -27,6 +29,17 @@ public class WeatherApiResponseModeler {
 		weatherDataRes.setWeatherCondition(weatherApiRes.getCurrent().getCondition().getText());
 		weatherDataRes.setWindDirection(weatherApiRes.getCurrent().getWind_dir());
 		weatherDataRes.setWindSpeed(weatherApiRes.getCurrent().getWind_kph());
+		
+		if(ObjectUtils.isNotEmpty(weatherApiRes.getCurrent().getAir_quality())) {
+			final AQIDataRes aqiDataRes = new AQIDataRes();
+			aqiDataRes.setCarbon_mono_oxide(weatherApiRes.getCurrent().getAir_quality().getCo());
+			aqiDataRes.setNitrogen_di_oxide(weatherApiRes.getCurrent().getAir_quality().getNo2());
+			aqiDataRes.setOzone(weatherApiRes.getCurrent().getAir_quality().getO3());
+			aqiDataRes.setSulpher_di_oxide(weatherApiRes.getCurrent().getAir_quality().getSo2());
+			aqiDataRes.setPm_two_point_five(weatherApiRes.getCurrent().getAir_quality().getPm2_5());
+			aqiDataRes.setPm_ten(weatherApiRes.getCurrent().getAir_quality().getPm10());
+			weatherDataRes.setAQIParameters(aqiDataRes);
+		}
 		return weatherDataRes;
 	}
 
