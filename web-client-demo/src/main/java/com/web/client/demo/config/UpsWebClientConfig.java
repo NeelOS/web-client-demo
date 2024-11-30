@@ -43,7 +43,7 @@ public class UpsWebClientConfig {
 	private String scope;
 
 	@Bean
-	public AuthorizedClientServiceOAuth2AuthorizedClientManager getClientManager() {
+	AuthorizedClientServiceOAuth2AuthorizedClientManager getClientManager() {
 		final ClientRegistrationRepository upsClientRepo = new AzureUpsOAuth2ClientRepository(clientId, clientSecret,
 				tokenUri, scope);
 		final OAuth2AuthorizedClientService authorizedClientService = new InMemoryOAuth2AuthorizedClientService(
@@ -52,7 +52,7 @@ public class UpsWebClientConfig {
 	}
 
 	@Bean("azureUpsWebClient")
-	public WebClient upsWebClient(final AuthorizedClientServiceOAuth2AuthorizedClientManager clientManager) {
+	WebClient upsWebClient(final AuthorizedClientServiceOAuth2AuthorizedClientManager clientManager) {
 		final ObjectMapper objMapper = new ObjectMapper();
 		objMapper.getFactory()
 				.setStreamReadConstraints(StreamReadConstraints.builder().maxStringLength(10000000).build());

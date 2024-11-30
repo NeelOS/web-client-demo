@@ -15,8 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UpsWebClient {
 
+	
 	@Autowired
 	private WebClient azureUpsWebClient;
+	
 
 	private static final String URI = "https://graph.microsoft.com/v1.0/users";
 

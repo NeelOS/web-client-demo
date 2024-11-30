@@ -25,5 +25,6 @@ public class UserProfileService {
 		responseObjectData.setData(upsData);
 		return responseObjectData;
 	}
+	
 
 }

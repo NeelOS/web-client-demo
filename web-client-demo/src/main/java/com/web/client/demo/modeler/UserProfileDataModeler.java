@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.web.client.demo.model.UserProfileApiRes;
 import com.web.client.demo.model.UserProfileDataRes;
+import java.util.Locale;
 
 @Component
 public class UserProfileDataModeler {
@@ -16,6 +17,7 @@ public class UserProfileDataModeler {
 		if(CollectionUtils.isNotEmpty(upsApiResponse.getValue())) {
 			
 			final String mobileNum  = StringUtils.join(upsApiResponse.getValue().get(0).getBusinessPhones(), ',');
+			final Locale languageSpoken = new Locale(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getPreferredLanguage(), "en"));
 			upsData.setUserId(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getId(), "NA"));
 			upsData.setFirstName(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getGivenName(), "NA"));
 			upsData.setLastName(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getSurname(), "NA"));
@@ -24,7 +26,7 @@ public class UserProfileDataModeler {
 			upsData.setMobileNum(StringUtils.defaultIfEmpty(mobileNum, "NA"));
 			upsData.setDesignation(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getJobTitle(), "NA"));
 			upsData.setOfficeLocation(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getOfficeLocation(), "NA"));
-			upsData.setLanguageSpoken(StringUtils.defaultIfEmpty(upsApiResponse.getValue().get(0).getPreferredLanguage(), "NA"));
+			upsData.setLanguageSpoken(languageSpoken.getDisplayLanguage());
 		}
 		return upsData;
 		
