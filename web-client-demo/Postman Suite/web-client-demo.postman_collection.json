@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"city\": \"Delhi\",\r\n    \"aqiRequired\": true\r\n}",
+					"raw": "{\r\n    \"city\": \"Kolkata\",\r\n    \"aqiRequired\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -30,6 +30,26 @@
 					"path": [
 						"web-client-demo",
 						"getWeatherData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/web-client-demo/getUserProfile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"web-client-demo",
+						"getUserProfile"
 					]
 				}
 			},
