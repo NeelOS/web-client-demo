@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "01aeec48-dc84-4cab-8201-9c3e58a39dc6",
+		"name": "Azure Ad Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7646638"
+	},
+	"item": [
+		{
+			"name": "Azure Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "09880f00-a54c-4def-974d-e17a06674fb1",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Rx78Q~XRmrcQcuhdL_6MdU2_d55w00naa-znldAk",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://graph.microsoft.com/.default",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/97d529aa-838d-4303-afd1-9d405fe20413/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"97d529aa-838d-4303-afd1-9d405fe20413",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6InRLZEhCVFJBLUg1VEtvWFVDbFdnS3FXR25pNm91OTcwb3VlUnVlNm9VT1kiLCJhbGciOiJSUzI1NiIsIng1dCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCIsImtpZCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85N2Q1MjlhYS04MzhkLTQzMDMtYWZkMS05ZDQwNWZlMjA0MTMvIiwiaWF0IjoxNzMyOTUwOTcyLCJuYmYiOjE3MzI5NTA5NzIsImV4cCI6MTczMjk1NDg3MiwiYWlvIjoiazJCZ1lHaVQydUxVdHlnaFUyL3A1SWFOMTZZS0FBQT0iLCJhcHBfZGlzcGxheW5hbWUiOiJ3ZWItY2xpZW50LWRlbW8iLCJhcHBpZCI6IjA5ODgwZjAwLWE1NGMtNGRlZi05NzRkLWUxN2EwNjY3NGZiMSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0Lzk3ZDUyOWFhLTgzOGQtNDMwMy1hZmQxLTlkNDA1ZmUyMDQxMy8iLCJpZHR5cCI6ImFwcCIsIm9pZCI6ImViMDczMDY0LWNlNTQtNGFkZC05YjYwLTMzNmM5YzA5YTEzNyIsInJoIjoiMS5BYjRBcWluVmw0MkRBME92MFoxQVgtSUVFd01BQUFBQUFBQUF3QUFBQUFBQUFBQy1BQUMtQUEuIiwicm9sZXMiOlsiVXNlci5SZWFkV3JpdGUuQWxsIiwiVXNlci5SZWFkLkFsbCJdLCJzdWIiOiJlYjA3MzA2NC1jZTU0LTRhZGQtOWI2MC0zMzZjOWMwOWExMzciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiQVMiLCJ0aWQiOiI5N2Q1MjlhYS04MzhkLTQzMDMtYWZkMS05ZDQwNWZlMjA0MTMiLCJ1dGkiOiJMMkZQc3BJNFowZURPQ1RIR3J0SEFRIiwidmVyIjoiMS4wIiwid2lkcyI6WyIwOTk3YTFkMC0wZDFkLTRhY2ItYjQwOC1kNWNhNzMxMjFlOTAiXSwieG1zX2lkcmVsIjoiNyA2IiwieG1zX3RjZHQiOjE3MzI5MDc5OTB9.jarfdnBm2kFgh67EydoNSsMPM0vWxw_7ZueteH1VGGo-Uz4RLTIEcVZpjtWQgR-LRId5v4dn_uUgOjur6HmurZy9BsfwgSXmFyv-8A-aistE3AXhyJIuti2b_iPEe2GQI_9PAODP-kPYIHm_5aqcuxn_whkRHtpD1xd5wt-yo11fKlT4sTJ9ia2CR-ro8bVtXgQaEQU5yY_0TTn0MIONHSEt7etwyCvlMW3swP7Jd9SNIl6CSr5aIvZDnApedohBmOW3S-ttC6nIV_2Rj5Qc0QEdl4-0_HTdTih8XfhJhohefuHyx0h8mS8jbj-TtpiFhYPrg9cR_1ZjNmQalWl1Ug",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://graph.microsoft.com/v1.0/users",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"v1.0",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6InRLZEhCVFJBLUg1VEtvWFVDbFdnS3FXR25pNm91OTcwb3VlUnVlNm9VT1kiLCJhbGciOiJSUzI1NiIsIng1dCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCIsImtpZCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85N2Q1MjlhYS04MzhkLTQzMDMtYWZkMS05ZDQwNWZlMjA0MTMvIiwiaWF0IjoxNzMyOTUwOTcyLCJuYmYiOjE3MzI5NTA5NzIsImV4cCI6MTczMjk1NDg3MiwiYWlvIjoiazJCZ1lHaVQydUxVdHlnaFUyL3A1SWFOMTZZS0FBQT0iLCJhcHBfZGlzcGxheW5hbWUiOiJ3ZWItY2xpZW50LWRlbW8iLCJhcHBpZCI6IjA5ODgwZjAwLWE1NGMtNGRlZi05NzRkLWUxN2EwNjY3NGZiMSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0Lzk3ZDUyOWFhLTgzOGQtNDMwMy1hZmQxLTlkNDA1ZmUyMDQxMy8iLCJpZHR5cCI6ImFwcCIsIm9pZCI6ImViMDczMDY0LWNlNTQtNGFkZC05YjYwLTMzNmM5YzA5YTEzNyIsInJoIjoiMS5BYjRBcWluVmw0MkRBME92MFoxQVgtSUVFd01BQUFBQUFBQUF3QUFBQUFBQUFBQy1BQUMtQUEuIiwicm9sZXMiOlsiVXNlci5SZWFkV3JpdGUuQWxsIiwiVXNlci5SZWFkLkFsbCJdLCJzdWIiOiJlYjA3MzA2NC1jZTU0LTRhZGQtOWI2MC0zMzZjOWMwOWExMzciLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiQVMiLCJ0aWQiOiI5N2Q1MjlhYS04MzhkLTQzMDMtYWZkMS05ZDQwNWZlMjA0MTMiLCJ1dGkiOiJMMkZQc3BJNFowZURPQ1RIR3J0SEFRIiwidmVyIjoiMS4wIiwid2lkcyI6WyIwOTk3YTFkMC0wZDFkLTRhY2ItYjQwOC1kNWNhNzMxMjFlOTAiXSwieG1zX2lkcmVsIjoiNyA2IiwieG1zX3RjZHQiOjE3MzI5MDc5OTB9.jarfdnBm2kFgh67EydoNSsMPM0vWxw_7ZueteH1VGGo-Uz4RLTIEcVZpjtWQgR-LRId5v4dn_uUgOjur6HmurZy9BsfwgSXmFyv-8A-aistE3AXhyJIuti2b_iPEe2GQI_9PAODP-kPYIHm_5aqcuxn_whkRHtpD1xd5wt-yo11fKlT4sTJ9ia2CR-ro8bVtXgQaEQU5yY_0TTn0MIONHSEt7etwyCvlMW3swP7Jd9SNIl6CSr5aIvZDnApedohBmOW3S-ttC6nIV_2Rj5Qc0QEdl4-0_HTdTih8XfhJhohefuHyx0h8mS8jbj-TtpiFhYPrg9cR_1ZjNmQalWl1Ug",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobTitle\": \"Software Engineer\",\r\n    \"department\": \"IT\",\r\n    \"officeLocation\": \"Kolkata\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://graph.microsoft.com/v1.0/users/64036ba8-f783-4857-bfcc-1703eceee4a8",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"v1.0",
+						"users",
+						"64036ba8-f783-4857-bfcc-1703eceee4a8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
