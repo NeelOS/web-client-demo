@@ -11,6 +11,12 @@ import com.web.client.demo.model.ResponseObjectData;
 import com.web.client.demo.service.UserProfileService;
 import com.web.client.demo.util.CommonUtil;
 
+/**
+ * This Controller gets basic user profile for the user whose client id and client secret is setup in the Azure portal and
+ * added in application.properties file. This example show how you can write web client which internally takes care of calling the 
+ * Oauth token api and manages the token in memory unti it exipires. More details of azure token setup is provided the word doc in this
+ * project.
+ */
 @RestController
 public class GetAzureUserProfile {
 	
